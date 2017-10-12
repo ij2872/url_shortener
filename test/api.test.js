@@ -1,6 +1,8 @@
-var request = require('supertest');
-var app = require('../app');
 var assert = require('chai').assert;
+var request = require('supertest');
+
+const g = require('../functions/library.js');
+var app = require('../app');
 
 
 describe('Api', function(){
@@ -17,7 +19,16 @@ describe('Api', function(){
 
     it("should return the same string", function(done){
         request(app).post("/api/url")
-            .send({url: "google"})
-            .expect("googlegen", done);
+            .send({url: "aaa"})
+            .expect("30", done);
+    });
+});
+
+
+describe("URL-Generator", function(){
+    
+    it("generate('aaa') Expected 30", function(){
+        let result = g("aaa");
+        assert.equal(result, '30');
     });
 });
