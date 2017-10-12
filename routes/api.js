@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const g = require('../functions/library');
+const {generate} = require('../functions/library');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -13,7 +13,7 @@ router.get('/url', function(req, res){
 
 // returns {url} JSON from a post request
 router.post('/url', function(req, res){
-  const result = g(req.body.url);
+  const result = generate(req.body.url);
   res.send(result);
 });
 

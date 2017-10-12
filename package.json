@@ -5,7 +5,7 @@
   "scripts": {
     "start": "nodemon --exec babel-node ./bin/www",
     "dstart": "DEBUG=url-shortener:* npm start",
-    "test": "mocha"
+    "test": "mocha --compilers js:babel-core/register"
   },
   "dependencies": {
     "body-parser": "~1.17.1",

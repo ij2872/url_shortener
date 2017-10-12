@@ -1,6 +1,6 @@
 
 //Returns int representation of a-zA-Z0-9
-function charToInt(char){
+export function charToInt(char){
 
     //if it's an int, return int
     if(!isNaN(char)){
@@ -40,13 +40,13 @@ function charToInt(char){
 }
 
 
-function getRegexStrArray(str){
+export function getRegexStrArray(str){
     let re = /[a-zA-Z0-9]/g;
     let results = str.match(re); 
     return results;
 }
 
-function encode(str){
+export function encode(str){
     let modId = 0;
     let charArray = getRegexStrArray(str);
 
@@ -57,7 +57,7 @@ function encode(str){
 }
 
 //Checks MongoDb for long url
-function decode(id){
+export function decode(id){
 
 }
 
@@ -65,7 +65,7 @@ function decode(id){
 
 
 // Generates url
-function generate(url) {
+export function generate(url) {
     return encode(url);
 }
 
@@ -73,4 +73,4 @@ function generate(url) {
 
 
 
-module.exports = generate;
+// module.exports = generate;

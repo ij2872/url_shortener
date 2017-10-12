@@ -1,7 +1,7 @@
 var assert = require('chai').assert;
 var request = require('supertest');
 
-const g = require('../functions/library.js');
+const {generate} = require('../functions/library');
 var app = require('../app');
 
 
@@ -28,7 +28,7 @@ describe('Api', function(){
 describe("URL-Generator", function(){
     
     it("generate('aaa') Expected 30", function(){
-        let result = g("aaa");
+        let result = generate("aaa");
         assert.equal(result, '30');
     });
 });
