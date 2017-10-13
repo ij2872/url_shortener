@@ -3,12 +3,16 @@ const router = express.Router();
 const {generate} = require('../functions/library');
 // const db = require('../functions/contextDb');
 
+
+
+// DATABASE CONNECTION
 let MongoClient = require('mongodb').MongoClient;
 import config from '../config.js';
 
 let db;
 const PROD_URI = `mongodb://${config.user}:${config.pass}@ds117495.mlab.com:17495/urlshortendb`;
-MongoClient.connect(PROD_URI, function(err, database){
+const DEV_URI = "mongodb://localhost:27017/urlShortDev";
+MongoClient.connect(DEV_URI, function(err, database){
     if(err) return console.log(err);
     db = database;
 });
@@ -33,15 +37,15 @@ router.get('/url/:str', function(req, res){
 });
 
 // Returns full url from
-router.get('/find/:str', function(req, res){
-  let str = req.params.str.toString();
+router.get('/find/:id', function(req, res){
+  let str = req.params.id.toString();
   let result = "";
   db.collection('url').findOne({"_id": str})
       .then(function(data){
         result = data.url;
-        console.log(result);
+        
       });
-
+    console.log(result);
   res.send(result);
 });
 
