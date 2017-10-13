@@ -17,10 +17,15 @@ describe('Api', function(){
             .expect("Please Provied a url to shorten.", done);
     });
 
-    it("should return the same string", function(done){
-        request(app).post("/api/url")
-            .send({url: "aaa"})
-            .expect("30", done);
+    // it("should return the same string", function(done){
+    //     request(app).post("/api/url")
+    //         .send({url: "aaa"})
+    //         .expect("30", done);
+    // });
+
+    it("/find/:id_66282718335233216_https://www.youtube.com/watch?v=yWB8RI3ZNWg", function(done){
+        request(app).get("/api/find/66282718335233216")
+            .expect("https://www.youtube.com/watch?v=yWB8RI3ZNWg", done);
     });
 });
 

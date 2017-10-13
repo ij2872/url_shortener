@@ -24,17 +24,17 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/url', function(req, res){
-  res.send('Please Provied a url to shorten.');  
+  res.send('Please send a POST to /api/url with a {url} to shorten');  
 });
 
-router.get('/url/:str', function(req, res){
-  let str = req.params.str;
+// router.get('/url/:str', function(req, res){
+//   let str = req.params.str;
 
-  let strId = generate(str);
-  // let dbArray = db.collection('url').find({shortenId: {$eq: strId}});
+//   let strId = generate(str);
+//   // let dbArray = db.collection('url').find({shortenId: {$eq: strId}});
 
-  db.collection('url').save({_id: strId, url: str });
-});
+//   db.collection('url').save({_id: strId, url: str });
+// });
 
 // Returns full url from
 router.get('/find/:id', function(req, res){
@@ -59,11 +59,13 @@ router.get('/find/:id', function(req, res){
 // Creates _id and url for Db
 // returns {url} JSON from a post request
 router.post('/url', function(req, res){
-  let str = req.body.url;
+  let str = req.params('user-url');
   let strId = generate(str);
 
   db.collection('url').save({_id: strId, url: str });
-  res.send(202);
+  res.render('index', { title: "Success" });  
+  // res.redirect(`/?id=${strId}`);
+  // res.send(202);
 });
 
 module.exports = router;
