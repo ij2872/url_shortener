@@ -39,16 +39,24 @@ router.get('/url/:str', function(req, res){
 // Returns full url from
 router.get('/find/:id', function(req, res){
   let str = req.params.id.toString();
-  let result = "";
-  db.collection('url').findOne({"_id": str})
-      .then(function(data){
-        result = data.url;
-        
-      });
-    console.log(result);
-  res.send(result);
+  let result = null;
+  result = db.collection('url').findOne({"_id": str})
+              .then(function(data){
+                return data.url;
+              });
+
+  // Fulfill promise
+  result
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((e) => {
+      console.log("Error: " + e);
+      res.send("No Link Found");
+    });
 });
 
+// Creates _id and url for Db
 // returns {url} JSON from a post request
 router.post('/url', function(req, res){
   let str = req.body.url;
