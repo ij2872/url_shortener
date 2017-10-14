@@ -7,10 +7,10 @@ const {generate} = require('../functions/library');
 
 // DATABASE CONNECTION
 let MongoClient = require('mongodb').MongoClient;
-import config from '../config.js';
+// import config from '../config.js';
 
 let db;
-const PROD_URI = `mongodb://${config.user}:${config.pass}@ds117495.mlab.com:17495/urlshortendb`;
+// const PROD_URI = `mongodb://${config.user}:${config.pass}@ds117495.mlab.com:17495/urlshortendb`;
 const DEV_URI = "mongodb://localhost:27017/urlShortDev";
 MongoClient.connect(DEV_URI, function(err, database){
     if(err) return console.log(err);
@@ -62,10 +62,9 @@ router.post('/url', function(req, res){
   let str = req.body.url;
   let strId = generate(str);
 
-  db.collection('url').save({_id: strId, url: str });
-  res.render('index', { title: "Success" });  
-  // res.redirect(`/?id=${strId}`);
-  // res.send(202);
+  // db.collection('url').save({_id: strId, url: str });
+  console.log("String is: " + str);
+  res.json({"shortUrl": strId});
 });
 
 module.exports = router;

@@ -8,10 +8,25 @@ function isValidData(str){
 $(document).ready(function(){
     
     //On User Submit
-    $('.submit').click( function(){
-        var userData = $('#user-url').val();
+    $('#user-btn').click(function(){
+        var userData = {};
+        userData.url = $('#user-url').val();
+
+        // Data is valid
         if(isValidData(userData)){
-            console.log(userData);            
+            console.log("Sending Data.." + userData.url);            
+            $.ajax({
+                type: "POST",
+                url: "/api/url",
+                data: JSON.stringify(userData),
+                contentType: 'application/json; charset=utf-8',
+                dataType: "json",
+                success: function(resultData){
+                    console.log("Complete");
+                    console.log("Data: " + resultData);
+                }
+            });       
+
         } else {
             console.log("Invalid Data.")
         }
