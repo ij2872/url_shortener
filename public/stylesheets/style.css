@@ -1,8 +1,40 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #155981;
+  color: white; }
 
 a {
   color: #00B7FF; }
+
+.container {
+  width: 100%;
+  background-color: #155377;
+  padding: 20px; }
+
+.user-input {
+  margin: auto;
+  width: 90%;
+  height: 100px;
+  padding: 10px;
+  text-align: center; }
+
+#user-url {
+  margin: 20px 0;
+  maring-bottom: 35px;
+  width: 90%; }
+
+#user-btn {
+  padding: 10px;
+  margin-bottom: 20px; }
+
+.server-data {
+  background: #196897; }
+  .server-data .link {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    color: #155377; }
 
 /*# sourceMappingURL=style.css.map */

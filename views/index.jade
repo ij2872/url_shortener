@@ -2,14 +2,15 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
 
+  
+  .container
 
     .user-input
-      .input
-        span.label URL
-        input(id="user-url", type="text", name="user-url" value="https://www.youtube.com/watch?v=nRGz2md8l28")
-        button(type="submit-btn", class="submit") Shorten
+      
+      input(id="user-url", type="text", name="user-url" value="https://www.youtube.com/watch?v=nRGz2md8l28")
+      <br / >
+      button(id="user-btn") Shorten
 
     .server-data
       .link test
