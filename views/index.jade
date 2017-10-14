@@ -5,10 +5,12 @@ block content
   p Welcome to #{title}
 
 
-  form(name="get-short-url", method="post", action="/api/url/")
-    div.input
-      span.label URL
-      input(type="text", name="user-url")
-    .actions
-      input(type="submit", value="Shorten")
+    .user-input
+      .input
+        span.label URL
+        input(id="user-url", type="text", name="user-url" value="https://www.youtube.com/watch?v=nRGz2md8l28")
+        button(type="submit-btn", class="submit") Shorten
 
+    .server-data
+      .link test
+  

@@ -59,7 +59,7 @@ router.get('/find/:id', function(req, res){
 // Creates _id and url for Db
 // returns {url} JSON from a post request
 router.post('/url', function(req, res){
-  let str = req.params('user-url');
+  let str = req.body.url;
   let strId = generate(str);
 
   db.collection('url').save({_id: strId, url: str });
