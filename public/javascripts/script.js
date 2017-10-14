@@ -7,6 +7,11 @@ function isValidData(str){
 
 $(document).ready(function(){
     
+    //Update Short url
+    function updateShortUrl(newShortUrl){
+        $('.link').text(newShortUrl);
+    }
+
     //On User Submit
     $('#user-btn').click(function(){
         var userData = {};
@@ -23,7 +28,8 @@ $(document).ready(function(){
                 dataType: "json",
                 success: function(resultData){
                     console.log("Complete");
-                    console.log("Data: " + resultData);
+                    console.log("Data: " + resultData.shortUrl);
+                    updateShortUrl(resultData.shortUrl);
                 }
             });       
 
