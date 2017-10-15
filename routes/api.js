@@ -4,7 +4,6 @@ const {generate} = require('../functions/library');
 // const db = require('../functions/contextDb');
 
 
-
 // DATABASE CONNECTION
 let MongoClient = require('mongodb').MongoClient;
 // import config from '../config.js';
