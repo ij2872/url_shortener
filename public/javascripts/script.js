@@ -9,7 +9,9 @@ $(document).ready(function(){
     
     //Update Short url
     function updateShortUrl(newShortUrl){
-        $('.link').text(newShortUrl);
+        var HOST_URL = "localhost:3000/li/";
+        $('.link').text(HOST_URL + newShortUrl);
+        $('.link').attr('href', "li/" + newShortUrl);
     }
 
     //On User Submit

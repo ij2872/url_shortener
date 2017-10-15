@@ -29,7 +29,9 @@ a {
   margin-bottom: 20px; }
 
 .server-data {
-  background: #196897; }
+  background: #196897;
+  text-align: center;
+  padding: 25px 10px; }
   .server-data .link {
     margin: auto;
     width: 50%;
