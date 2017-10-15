@@ -1,11 +1,10 @@
 extends layout
 
 block content
-  h1= title
 
 
   .container
-
+    h1.logo= title
     .user-input
       
       input(id="user-url", type="text", name="user-url" value="https://www.youtube.com/watch?v=nRGz2md8l28")
@@ -13,5 +12,5 @@ block content
       button(id="user-btn") Shorten
 
     .server-data
-      a.link(href="/li/6862221382128") localhost:3000/li/6862221382128
+      .link(href="/li/6862221382128") localhost:3000/li/6862221382128
   
