@@ -1,18 +1,31 @@
 
+
 function isValidData(str){
     if(str.length < 5) return false;
     if(str.length > 200) return false;
     return true;
 }
 
+function copyToClip(){
+    var copyText = document.getElementById("link");
+    copyText.select();
+    document.execCommand("Copy");
+
+}
+
 $(document).ready(function(){
     
+
     //Update Short url
     function updateShortUrl(newShortUrl){
         var HOST_URL = "localhost:3000/li/";
         $('.link').text(HOST_URL + newShortUrl);
         $('.link').attr('href', "li/" + newShortUrl);
     }
+
+    $('#copyToClip').click(function(){
+        copyToClip();
+    });
 
     //On User Submit
     $('#user-btn').click(function(){

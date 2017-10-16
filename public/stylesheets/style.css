@@ -1,7 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #155981;
+  background-color: #313B54;
   color: white; }
 
 a {
@@ -15,12 +15,9 @@ a {
   font-weight: 800; }
 
 .container {
-  width: 100%;
   background-color: #155377;
   padding: 20px;
   border-radius: 5px;
-  border-left: solid #FE8E6A 20px;
-  margin-left: -20px;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5); }
 
 .user-input {
@@ -33,9 +30,9 @@ a {
 #user-url {
   margin: 20px 0;
   maring-bottom: 35px;
-  width: 90%;
-  height: 25px;
-  background-color: #64b8ea;
+  width: 100%;
+  height: 30px;
+  background-color: #F2F5F7;
   border: none;
   border-radius: 2px;
   font-weight: 500; }
