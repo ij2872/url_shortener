@@ -1,17 +1,17 @@
 
+//Clipboard.js
+new Clipboard('#copyToClip');
 
+
+
+// Functions
 function isValidData(str){
     if(str.length < 5) return false;
     if(str.length > 200) return false;
     return true;
 }
 
-function copyToClip(){
-    var copyText = document.getElementById("link");
-    copyText.select();
-    document.execCommand("Copy");
 
-}
 
 $(document).ready(function(){
     
@@ -23,9 +23,6 @@ $(document).ready(function(){
         $('.link').attr('href', "li/" + newShortUrl);
     }
 
-    $('#copyToClip').click(function(){
-        copyToClip();
-    });
 
     //On User Submit
     $('#user-btn').click(function(){

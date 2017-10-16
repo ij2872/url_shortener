@@ -1,11 +1,15 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px;
   background-color: #313B54;
-  color: white; }
+  color: white;
+  font-family: 'Ubuntu', sans-serif; }
 
 a {
   color: #00B7FF; }
+
+.logo {
+  font-family: 'Oswald', sans-serif; }
 
 #user-btn {
   background-color: smokewhite;
@@ -25,7 +29,8 @@ a {
   width: 90%;
   height: 100px;
   padding: 10px;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 20px; }
 
 #user-url {
   margin: 20px 0;
@@ -45,7 +50,8 @@ a {
   background: #196897;
   text-align: center;
   padding: 25px 10px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  position: relative; }
   .server-data .link {
     margin: auto;
     width: 50%;
@@ -54,5 +60,16 @@ a {
     color: white;
     font-weight: 700;
     text-decoration: none; }
+
+#copyToClip {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  width: 40px;
+  background-color: #2577a8;
+  border: none; }
+  #copyToClip:active {
+    background-color: #468eba; }
 
 /*# sourceMappingURL=style.css.map */
