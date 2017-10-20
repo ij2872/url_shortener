@@ -8,6 +8,7 @@ var _config = require('./config');var _config2 = _interopRequireDefault(_config)
 var MongoClient = require('mongodb').MongoClient;
 
 var db = void 0;
+console.log("info: " + _config2.default.user + " " + _config2.default.pass);
 var PROD_URI = 'mongodb://' + _config2.default.user + ':' + _config2.default.pass + '@ds117495.mlab.com:17495/urlshortendb';
 // const DEV_URI = "mongodb://localhost:27017/urlShortDev";
 MongoClient.connect(PROD_URI, function (err, database) {
