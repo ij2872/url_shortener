@@ -70,7 +70,3 @@ export function generate(url) {
 }
 
 
-
-
-
-// module.exports = generate;
