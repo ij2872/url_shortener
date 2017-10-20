@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon --exec babel-node ./bin/www",
-    "dstart": "DEBUG=url-shortener:* npm start",
+    "start": "babel-node ./bin/www --presets es2015",
+    "devstart": "nodemon --exec babel-node ./bin/www",
     "test": "mocha --compilers js:babel-core/register"
   },
   "dependencies": {
