@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const {generate, decToHex, hexToDec, randomNum} = require('../functions/library');
-import config from '../config.js';
+const {generate, decToHex, hexToDec, randomNum} = require('./functions/library');
+import config from './config';
 
 
 // DATABASE CONNECTION

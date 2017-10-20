@@ -6,9 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var sassMiddleware = require('node-sass-middleware');
 
-var index = require('./routes/index');
-var li = require('./routes/li');
-var api = require('./routes/api');
+var index = require('./dist/index');
+var li = require('./dist/li');
+var api = require('./dist/api');
 
 var app = express();
 

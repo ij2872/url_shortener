@@ -3,7 +3,7 @@ var router = express.Router();
 
 // DATABASE CONNECTION
 let MongoClient = require('mongodb').MongoClient;
-import config from '../config.js';
+import config from './config';
 
 let db;
 const PROD_URI = `mongodb://${config.user}:${config.pass}@ds117495.mlab.com:17495/urlshortendb`;
