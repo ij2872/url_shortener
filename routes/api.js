@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {generate} = require('../functions/library');
+const {generate, decToHex, hexToDec, randomNum} = require('../functions/library');
 // const db = require('../functions/contextDb');
 
 
@@ -34,7 +34,14 @@ router.post('/url', function(req, res){
 
   // Get last saved urls 'shortUrl' id, then add 1 for the new url requested
   db.collection('url').find({}).sort({_id:-1}).limit(1).toArray((err, items) => {
-    strId = parseInt(items[0].shortUrl) + 1;
+    let lastCreatedIdDec = hexToDec(items[0].shortUrl);
+    
+    // add a number between 1-5 from the previous id
+    strId = decToHex(lastCreatedIdDec + randomNum());
+
+    //@TODO Check if shortUrl already exist. If yes, do not create a new instence.
+    db.collection('url').find({"shortUrl": strId});
+
     db.collection('url').save({url: str, shortUrl: strId});
     res.json({"shortUrl": strId});
   });

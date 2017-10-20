@@ -1,4 +1,17 @@
 
+export function decToHex(str){
+    return str.toString(16).toUpperCase();
+}
+
+export function hexToDec(str){
+    return parseInt(str, 16);
+}
+
+// Returns a random number between 1-4
+export function randomNum(){
+    return Math.floor(Math.random() * 5) + 1;
+}
+
 //Returns int representation of a-zA-Z0-9
 export function charToInt(char){
 
