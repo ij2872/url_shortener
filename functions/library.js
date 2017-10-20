@@ -69,13 +69,6 @@ export function encode(str){
     return modId.toString();
 }
 
-//Checks MongoDb for long url
-export function decode(id){
-
-}
-
-
-
 
 // Generates url
 export function generate(url) {

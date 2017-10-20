@@ -1,5 +1,6 @@
 body {
-  padding: 50px;
+  padding: 25px;
+  margin: 0;
   font: 14px;
   background-color: #313B54;
   color: white;
@@ -10,6 +11,9 @@ a {
 
 .logo {
   font-family: 'Oswald', sans-serif; }
+
+.example {
+  color: #D3D3D3; }
 
 #user-btn {
   background-color: smokewhite;
@@ -30,7 +34,7 @@ a {
   height: 100px;
   padding: 10px;
   text-align: center;
-  margin-bottom: 20px; }
+  margin-bottom: 50px; }
 
 #user-url {
   margin: 20px 0;
@@ -43,8 +47,10 @@ a {
   font-weight: 500; }
 
 #user-btn {
-  padding: 10px;
-  margin-bottom: 20px; }
+  padding: 13px;
+  margin-bottom: 20px;
+  color: black;
+  background-color: #e7e7e7; }
 
 .server-data {
   background: #196897;
@@ -59,7 +65,8 @@ a {
     text-align: center;
     color: white;
     font-weight: 700;
-    text-decoration: none; }
+    text-decoration: none;
+    font-size: 2.2vw; }
 
 #copyToClip {
   position: absolute;
@@ -71,5 +78,13 @@ a {
   border: none; }
   #copyToClip:active {
     background-color: #468eba; }
+
+@media screen and (max-width: 720px) {
+  body {
+    padding: 0; }
+  .container {
+    margin: 0 auto;
+    width: 90vw;
+    height: 90vh; } }
 
 /*# sourceMappingURL=style.css.map */

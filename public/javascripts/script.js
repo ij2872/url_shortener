@@ -7,7 +7,7 @@ new Clipboard('#copyToClip');
 // Functions
 function isValidData(str){
     if(str.length < 5) return false;
-    if(str.length > 200) return false;
+    if(str.length > 1000) return false;
     return true;
 }
 
@@ -30,7 +30,7 @@ $(document).ready(function(){
         userData.url = $('#user-url').val();
 
         // Data is valid
-        if(isValidData(userData)){
+        if(isValidData(userData.url)){
             console.log("Sending Data.." + userData.url);            
             $.ajax({
                 type: "POST",

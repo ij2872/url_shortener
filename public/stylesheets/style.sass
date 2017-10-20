@@ -1,15 +1,22 @@
+$break-mobile: 720px;
+
 body
-  padding: 50px
+  padding: 25px
+  margin: 0
   font: 14px
   background-color: #313B54
   color: white
   font-family: 'Ubuntu', sans-serif
+  
 
 a
   color: #00B7FF
 
 .logo
   font-family: 'Oswald', sans-serif
+
+.example
+  color: #D3D3D3
 
 #user-btn
   background-color: smokewhite
@@ -24,7 +31,6 @@ a
   border-radius: 5px
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5)
 
-  
 
 .user-input
   margin: auto
@@ -32,7 +38,7 @@ a
   height: 100px
   padding: 10px
   text-align: center
-  margin-bottom: 20px
+  margin-bottom: 50px
 
 #user-url 
   margin: 20px 0
@@ -45,8 +51,10 @@ a
   font-weight: 500
 
 #user-btn
-  padding: 10px
+  padding: 13px
   margin-bottom: 20px
+  color: black
+  background-color: #e7e7e7
 
 .server-data
   background: #196897
@@ -62,7 +70,7 @@ a
     color: white
     font-weight: 700
     text-decoration: none
-    font-size:
+    font-size: 2.2vw
 
 #copyToClip
   position: absolute
@@ -74,3 +82,11 @@ a
   border: none
   &:active
     background-color: #468eba;
+
+@media screen and (max-width: $break-mobile)
+    body
+      padding: 0
+    .container
+      margin: 0 auto
+      width: 90vw
+      height: 90vh

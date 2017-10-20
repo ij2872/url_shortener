@@ -4,13 +4,14 @@ block content
 
   .container
     h1.logo= title
+    p.example Ex: https://www.youtube.com/watch?v=rSEn1e3nybs
     .user-input
       
-      input(id="user-url", type="text", name="user-url" value="https://www.youtube.com/watch?v=nRGz2md8l28")
+      input(id="user-url", type="text", name="user-url" placeholder="Enter Link Here")
       <br / >
       button(id="user-btn") Shorten
     .server-data
-      .link(id="link" href="/li/6862221382128" value="THIS IS A TEST TO COPY") localhost:3000/li/6862221382128
+      .link(id="link" href="#" value="THIS IS A TEST TO COPY")
       button(id="copyToClip" data-clipboard-target="#link") 
         img(src="/images/clipboard.svg", alt="Copy to Clipboard")
         
