@@ -29,22 +29,33 @@ router.get('/url', function(req, res){
 // Creates _id and url for Db
 // returns {url} JSON from a post request
 router.post('/url', function(req, res){
-  let str = req.body.url;
+  let userUrl = req.body.url;
   let strId = 1;
-
-  // Get last saved urls 'shortUrl' id, then add 1 for the new url requested
-  db.collection('url').find({}).sort({_id:-1}).limit(1).toArray((err, items) => {
-    let lastCreatedIdDec = hexToDec(items[0].shortUrl);
+  
+  //@TODO Check if shortUrl already exist. If yes, do not create a new instence.
+  db.collection('url').find({"url": userUrl}).limit(1).toArray((err, item) =>{
     
-    // add a number between 1-5 from the previous id
-    strId = decToHex(lastCreatedIdDec + randomNum());
+    //If url already exist in db
+    if(item.length > 0){
+      res.json({"shortUrl": item[0].shortUrl});
+    } else {
+      // Get last saved urls 'shortUrl' id, then add 1 for the new url requested
+      db.collection('url').find({}).sort({_id:-1}).limit(1).toArray((err, items) => {
+        let lastCreatedIdDec = hexToDec(items[0].shortUrl);
+        
+        // add a number between 1-5 from the previous id
+        strId = decToHex(lastCreatedIdDec + randomNum());
+        
+        db.collection('url').save({url: userUrl, shortUrl: strId});
+        res.json({"shortUrl": strId});
+      });
+      
+    }
+    
 
-    //@TODO Check if shortUrl already exist. If yes, do not create a new instence.
-    db.collection('url').find({"shortUrl": strId});
-
-    db.collection('url').save({url: str, shortUrl: strId});
-    res.json({"shortUrl": strId});
   });
+    
+
 
 });
 
