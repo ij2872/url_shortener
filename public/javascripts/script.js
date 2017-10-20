@@ -18,7 +18,7 @@ $(document).ready(function(){
 
     //Update Short url
     function updateShortUrl(newShortUrl){
-        var HOST_URL = "localhost:3000/li/";
+        var HOST_URL = "ijshort.herokuapp.com/li/";
         $('.link').text(HOST_URL + newShortUrl);
         $('.link').attr('href', "li/" + newShortUrl);
     }
