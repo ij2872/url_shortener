@@ -16,11 +16,6 @@ MongoClient.connect(DEV_URI, function(err, database){
   db = database;
 });
 
-//----- MONGODB FUNCTIONS
-function getNextSequence(name){
-  var ret = db
-}
-//----- MONGODB END
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -39,13 +34,11 @@ router.post('/url', function(req, res){
 
   // Get last saved urls 'shortUrl' id, then add 1 for the new url requested
   db.collection('url').find({}).sort({_id:-1}).limit(1).toArray((err, items) => {
-    console.log(items[0].shortUrl);
-    strId = items.shortUrl + 1;
-    console.log(`strId: ${strId}`);
+    strId = parseInt(items[0].shortUrl) + 1;
+    db.collection('url').save({url: str, shortUrl: strId});
+    res.json({"shortUrl": strId});
   });
 
-  // db.collection('url').save({url: str, shortUrl: strId});
-  res.json({"shortUrl": strId});
 });
 
 module.exports = router;

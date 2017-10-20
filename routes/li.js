@@ -20,14 +20,15 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/:id', function(req, res){
-  let result = null;
-  result = db.collection('url').findOne({"_id": req.params.id})
-            .then(function(data){
-              return data.url;
-            });
-  result
-    .then((result) =>{
-      res.redirect(result);
+  let userShortUrlId = parseInt(req.params.id);
+  // let result = db.collection('url').findOne({"shortUrl": req.params.id})
+  //           .then(function(data){
+  //             return data.url;
+  //           });
+  
+    db.collection('url').find({"shortUrl": userShortUrlId}).toArray().then((result) =>{
+      console.log(result);
+      res.redirect(result[0].url);
     })
     .catch((e) => {
       console.log(e);
